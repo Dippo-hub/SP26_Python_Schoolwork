@@ -29,7 +29,9 @@ def editDeck():
   except Exception as e:
      print(f"An error occurred: {e}")
   for card in added:
-    if 
+    for item in deck:
+      if item==card:
+        deck[item]+=1
 
 #def getDeck():
 
