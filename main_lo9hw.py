@@ -1,5 +1,5 @@
 from menu_lo9hw import Menu
-import os
+import os, subprocess
 
 def run_bash_cmd(choice):
     # Mapping choice to actual Linux commands
@@ -10,7 +10,8 @@ def run_bash_cmd(choice):
     }
     cmd = commands.get(choice)
     if cmd:
-        os.system(cmd)
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        print(result.stdout)
 
 def main():
     mainMenu=Menu()
