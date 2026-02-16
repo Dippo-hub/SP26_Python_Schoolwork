@@ -1,0 +1,39 @@
+'''def getInput(var):
+    var=input()
+    return var
+
+def calcTax(price,rate):
+    result=price*(100+rate)/100
+    return result
+sentinel=''
+price=0
+tax=0
+
+done = False
+while not done:
+    print("Press Q to quit. Press any other key to compute tax.")
+    sentinel=str.upper(getInput(sentinel))
+    if sentinel == 'Q':
+        done = True
+        print(sentinel,done)
+        continue
+    else:
+        print("Compute tax")
+    
+    print("Enter price")
+    price=float(getInput(price))
+    print("Enter tax rate (%).")
+    tax=float(getInput(tax))
+    print(f'The calculated price is {calcTax(price,tax)}')'''
+
+def addMult(x,y):
+    result1=x+y
+    result2=x*y
+    return result1,result2
+
+x=int(input("Enter first value: "))
+y=int(input("Enter second value: "))
+#print(addMult(x,y))
+
+add_mult=lambda x,y : (x+y,x*y)
+print(add_mult(x,y))
