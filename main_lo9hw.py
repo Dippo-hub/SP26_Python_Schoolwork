@@ -10,7 +10,7 @@ def run_bash_cmd(choice):
     }
     cmd = commands.get(choice)
     if cmd:
-        result = subprocess.run(cmd, capture_output=True, text=True)
+        result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
         print(result.stdout)
 
 def main():
@@ -28,7 +28,7 @@ def main():
         break
             
         #Execute Linux utilities for other valid entries
-        run_bash_cmd(choice)
+     run_bash_cmd(action)
 
 if __name__ == "__main__":
     main()
