@@ -1,91 +1,77 @@
-1 Academy Manufactor
-1 Access Tunnel
-1 Adrix and Nev, Twincasters
-1 Akroma's Will
-1 Arcane Denial
+1 Alpine Meadow
 1 Arcane Signet
-1 Ashnod's Altar
-1 Avenger of Zendikar
-1 Azorius Charm
-1 Bala Ged Recovery
-1 Bess, Soul Nourisher
-1 Biorhythm
-1 Birthing Pod
-1 Boseiju, Who Endures
-1 Bountiful Promenade
-1 Breeding Pool
-1 Clever Concealment
+1 Assault on Osgiliath
+1 Assemble the Legion
+1 Aurelia's Fury
+1 Battlefield Forge
+1 Bender's Waterskin
+1 Blasphemous Act
+1 Book of Mazarbul
+1 Boros Charm
+1 Boros Reckoner
+1 Brash Taunter
+1 Cessation
+1 Chain Reaction
+1 Chandra's Incinerator
+1 Circle of Protection: Red
 1 Command Tower
-1 Conduit of Worlds
-1 Counterspell
-1 Darksteel Splicer
-1 Deserted Beach
-1 Doubling Season
-1 Dreamroot Cascade
-1 Eldritch Evolution
-1 Elspeth, Storm Slayer
-1 Esper Sentinel
-1 Eternal Scourge
-1 Eternal Witness
-1 Exalted Sunborn
+1 Commander's Sphere
+1 Deflecting Palm
+1 Delete
+1 Earthquake
+1 Enlightened Tutor
 1 Exotic Orchard
-1 Fabled Passage
-4 Forest
-1 Glacial Fortress
-1 Gogo, Master of Mimicry
-1 Growing Ranks
-1 Hallowed Fountain
-1 Haywire Mite
-1 Heroic Intervention
-1 Hinterland Harbor
-1 Hour of Reckoning
-1 Inspiring Statuary
-4 Island
-1 Jaheira, Friend of the Forest
-1 Losheel, Clockwork Scholar
-1 Luminous Broodmoth
-1 Mondrak, Glory Dominus
-1 Mulldrifter
-1 Myr Battlesphere
-1 Neoform
-1 Nesting Dovehawk
-1 Night of the Sweets' Revenge
-1 Ohran Frostfang
-1 Ojer Taq, Deepest Foundation
-1 Overgrown Farmland
-1 Parallel Lives
-1 Path to Exile
-1 Peregrin Took
-5 Plains
-1 Rejuvenating Springs
-1 Rogue's Passage
-1 Rootborn Defenses
-1 Sam, Loyal Attendant
-1 Sea of Clouds
-1 Season of Weaving
-1 Second Harvest
-1 Selfless Spirit
+1 Fall of Cair Andros
+1 Fiery Emancipation
+1 Firesong and Sunspeaker
+1 Fling
+1 Foray of Orcs
+1 Furycalm Snarl
+1 Gisela, Blade of Goldnight
+1 Goblin Negotiation
+1 Grishnákh, Brash Instigator
+1 Hell to Pay
+1 Idyllic Tutor
+1 Ill-Tempered Loner
+1 Imodane, the Pyrohammer
+1 Invoke the Divine
+1 Jeska's Will
+1 Kazuul's Fury
+1 Magmatic Galleon
+1 Mana Geyser
+1 Mark of Asylum
+1 Mizzium Mortars
+13 Mountain
+1 Nahiri's Warcrafting
+1 Olórin's Searing Light
+1 Orbital Plunge
+1 Overwhelming Victory
+1 Phyrexian Vindicator
+1 Pigment Storm
+13 Plains
+1 Razor Rings
+1 Rem Karolus, Stalwart Slayer
+1 Repercussion
+1 Replicating Ring
+1 Rolling Earthquake
+1 Sacred Peaks
 1 Sol Ring
-1 Soldevi Simulacrum
-1 Solemn Simulacrum
-1 Solitude
-1 Song of the Worldsoul
-1 Spara's Headquarters
-1 Sundering Growth
-1 Sunpetal Grove
-1 Swan Song
-1 Swords to Plowshares
-1 Syr Ginger, the Meal Ender
-1 Temple Garden
-1 Thought Monitor
-1 Thriving Grove
-1 Thriving Heath
-1 Thriving Isle
-1 Toski, Bearer of Secrets
-1 Tribute to the World Tree
-1 Triplicate Titan
-1 True Conviction
-1 Windbrisk Raptor
-1 Wing Splicer
+1 Solphim, Mayhem Dominus
+1 Spiteful Banditry
+1 Spitemare
+1 Star of Extinction
+1 Starstorm
+1 Storm's Wrath
+1 Swarming of Moria
+1 Talisman of Conviction
+1 Temple of Triumph
+1 Tempt with Bunnies
+1 Thud
+1 Toralf, God of Fury
+1 Torbran, Thane of Red Fell
+1 Torch the Witness
+1 Vandalblast
+1 Warbeast of Gorgoroth
+1 Wear/Tear
 
-1 Brenard, Ginger Sculptor
+1 Brion Stoutarm

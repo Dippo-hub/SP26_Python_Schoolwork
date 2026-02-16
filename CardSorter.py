@@ -2,9 +2,9 @@
 added=[]
 removed=[]
 unsure=[]
-
-decklist=[]
 deck={}
+decklist=[]
+
 import re
 
 def editDeck():
@@ -38,6 +38,7 @@ def editDeck():
   print(deck)
 
 def getDeck():
+  deck={} 
   action=input("Enter cards by (T)ext or by (F)ile? ").upper()
   if action=='T':
     cards=input("Enter deck as plain text: ").split('\n')
@@ -52,23 +53,43 @@ def getDeck():
     stuff=input("Enter decklist file name: ")
     try:
       with open(stuff, 'r') as file:
-        cards=file.read().split('\n')
-        for card in cards:
-          match=re.search(r"(\d+),\s*(.*)", card)
+        cards_=file.read().split('\n')
+        for card_ in cards_:
+          match=re.search(r"(\d+)\s*(.*)", card_)
           if match:
            quantity = int(match.group(1))
            name = match.group(2)
            deck.update({name : quantity})
     except Exception as e:
       print(F"An error occured: {e}")
-    print(deck)
+    try:
+      with open('decks.txt', 'a') as file:
+        cmdr=input("Enter commander: ")
+        file.write(f"\n\nCommander: 1 {cmdr}\n\n")
+        for name, qty in deck.items():
+            if name!=cmdr:
+             file.write(f"{qty} {name}\n")
+    except FileNotFoundError:
+     print("File not found.")
+    viewDeck()
   else:
     print("Invalid input.")
 
 
 def viewDeck():
-  for card in deck:
-    print(f"{card} {deck[card]}")
+  commander=input("Enter commander: ")
+  try:
+    with open('decks.txt','r') as file:
+      for card__ in file.read().split('\n'):
+        if card__==commander:
+          match=re.search(r"(\d+)\s*(.*)", card__)
+          if match:
+           quantity = int(match.group(1))
+           name = match.group(2)
+           deck.update({name : quantity})
+  except Exception as e:
+      print(F"An error occured: {e}")
+
 
 
 while 1:
@@ -80,4 +101,5 @@ while 1:
   if (action==3):
     viewDeck()
   if action==4:
+    print("Quitting.")
     break
