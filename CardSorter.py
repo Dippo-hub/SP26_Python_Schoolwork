@@ -31,14 +31,19 @@ def editDeck():
     
   except Exception as e:
      print(f"An error occurred: {e}")
+  #Adding cards
   try:
-    with open('decks.txt','a') as file:
+    with open('decks.txt','r+') as file:
+      found=False
+      x=0
       stop_count=0
       commander_=input("Which commander to edit? ")
       for card___ in file.read().split('\n'):
-       for to_be in added:
         match_c=re.search(commander_, card___)
         match_stop=re.search("Commander:", card___)
+        if x>=len(added):
+         print("Added all cards.")
+         break
         if match_c:
           if found==True:
             continue
@@ -46,24 +51,25 @@ def editDeck():
            found=True
            print(f'Found {card___}')
         if found==True:
-           if not match_stop:
-            target_keyword = commander_  # The header you're looking for
-            text_to_add = to_be 
-
-# inplace=True redirects stdout to the file itself
-            for line in fileinput.input('decks.txt', inplace=True):
-             print(line, end="")  # Print original line back to file
-            if target_keyword in line:
-              print(text_to_add)
+          if not match_stop: 
+              print(f'Adding {added[x]} to {commander_}')
+              file.write(f'\n1 {added[x]}')
+              x+=1
               continue
-        elif stop_count==0:
-         stop_count+=1
-        else:
-          break
+          elif stop_count==0:
+           print('Skipping commander for the first time.')
+           stop_count+=1
+          else:
+           break
+      for card___ in file.read().split('\n'):
+        match_c=re.search(commander_, card___)
+        match_stop=re.search("Commander:", card___)
+        match_cut=re.search(removed[y],card__)
+       
             
            
-    if found==False:
-     print(f'Card {cut} not found.')
+    #if found==False:
+     #print(f'Card {commander_} not found.')
     
   except Exception as e:
       print(F"An error occured: {e}")
@@ -136,11 +142,15 @@ def viewDeck():
 
 
 while 1:
-  action=int(input("1: Add decklist.\n2: Edit decklist.\n3: View Decklist.\n4: Quit. "))
+  try:
+   action=int(input("1: Add decklist.\n2: Edit decklist.\n3: View Decklist.\n4: Quit. "))
+  except ValueError as exception :
+   print("Error:", str(exception))
+   continue
   if (action==1):
     getDeck()
   if (action==2):
-    editDeck
+    editDeck()
   if (action==3):
     viewDeck()
   if action==4:

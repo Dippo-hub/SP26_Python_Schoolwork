@@ -1,77 +1,96 @@
-1 Alpine Meadow
+1 Adarkar Wastes
+1 Agility Bobblehead
+1 Ancient Den
 1 Arcane Signet
-1 Assault on Osgiliath
-1 Assemble the Legion
-1 Aurelia's Fury
+1 Armed and Armored
+1 Armix, Filigree Thrasher
+1 Attrition
+1 Baboon Spirit
 1 Battlefield Forge
-1 Bender's Waterskin
-1 Blasphemous Act
-1 Book of Mazarbul
-1 Boros Charm
-1 Boros Reckoner
-1 Brash Taunter
-1 Cessation
-1 Chain Reaction
-1 Chandra's Incinerator
-1 Circle of Protection: Red
+1 Bitter Triumph
+1 Blood Crypt
+1 Born to Drive
+1 Braids, Arisen Nightmare
+1 Caves of Koilos
+1 Clamorous Ironclad
 1 Command Tower
 1 Commander's Sphere
-1 Deflecting Palm
-1 Delete
-1 Earthquake
-1 Enlightened Tutor
-1 Exotic Orchard
-1 Fall of Cair Andros
-1 Fiery Emancipation
-1 Firesong and Sunspeaker
-1 Fling
-1 Foray of Orcs
-1 Furycalm Snarl
-1 Gisela, Blade of Goldnight
-1 Goblin Negotiation
-1 Grishnákh, Brash Instigator
-1 Hell to Pay
-1 Idyllic Tutor
-1 Ill-Tempered Loner
-1 Imodane, the Pyrohammer
-1 Invoke the Divine
-1 Jeska's Will
-1 Kazuul's Fury
-1 Magmatic Galleon
-1 Mana Geyser
-1 Mark of Asylum
-1 Mizzium Mortars
-13 Mountain
-1 Nahiri's Warcrafting
-1 Olórin's Searing Light
-1 Orbital Plunge
-1 Overwhelming Victory
-1 Phyrexian Vindicator
-1 Pigment Storm
-13 Plains
-1 Razor Rings
-1 Rem Karolus, Stalwart Slayer
-1 Repercussion
-1 Replicating Ring
-1 Rolling Earthquake
-1 Sacred Peaks
-1 Sol Ring
-1 Solphim, Mayhem Dominus
-1 Spiteful Banditry
-1 Spitemare
-1 Star of Extinction
-1 Starstorm
-1 Storm's Wrath
-1 Swarming of Moria
-1 Talisman of Conviction
-1 Temple of Triumph
-1 Tempt with Bunnies
-1 Thud
-1 Toralf, God of Fury
-1 Torbran, Thane of Red Fell
-1 Torch the Witness
-1 Vandalblast
-1 Warbeast of Gorgoroth
-1 Wear/Tear
+1 Cynical Loner
+1 Deadly Dispute
+1 Decree of Pain
+1 Demonic Junker
+1 Dispatch
+1 Drossforge Bridge
+1 Entomb
+1 Feed the Serpent
+1 Filth
+1 Gastal Thrillroller
+1 Godless Shrine
+1 Goldmire Bridge
+1 Greasefang, Okiba Boss
+1 Great Furnace
+1 Hallowed Fountain
+1 Hoard Hauler
+1 Hotshot Mechanic
+1 Imotekh the Stormlord
+1 Imposter Mech
+1 In Garruk's Wake
+1 Interface Ace
+1 Island
+1 Jackdaw
+1 Key to the City
+1 King Macar, the Gold-Cursed
+1 Knight Paladin
+1 Marauding Dreadship
+1 Megatron, Tyrant
+1 Midnight Pathlighter
+1 Mikaeus, the Unhallowed
+1 Mistvault Bridge
+1 Mobilizer Mech
+1 Monoist Sentry
+1 Morbid Curiosity
+1 Mountain
+1 Murder
+1 Nautiloid Ship
+1 Null Profusion
+1 Okiba Reckoner Raid
+1 Oppression
+1 Optimus Prime, Hero
+1 Oriq Loremage
+1 Parhelion II
+1 Path to Exile
+1 Peacewalker Colossus
+1 Phyrexian Arena
+2 Plains
+1 Putrid Imp
+1 Razortide Bridge
+1 Reaver Titan
+1 Reckoner's Bargain
+1 RMS Titanic
+1 Rout
+1 Rustvale Bridge
+1 Sacred Foundry
+1 Salvation Engine
+1 Scrap Mastery
+1 Seat of the Synod
+1 Shaun, Father of Synths
+1 Shivan Reef
+1 Silverbluff Bridge
+1 Skysovereign, Consul Flagship
+1 Steam Vents
+1 Sulfurous Springs
+6 Swamp
+1 Swords to Plowshares
+1 Talisman of Hierarchy
+1 Tempered Steel
+1 The Eternal Wanderer
+1 The Indomitable
+1 Thunderhawk Gunship
+1 Underground River
+1 Unmarked Grave
+1 Valor's Flagship
+1 Vault of Whispers
+1 Vela the Night-Clad
+1 Watery Grave
 
-1 Brion Stoutarm
+1 Breya, Etherium Shaper
