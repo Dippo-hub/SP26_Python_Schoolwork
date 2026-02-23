@@ -37,36 +37,22 @@ def editDeck():
      try:
       print("Reading file to add to.")
       lines=file.readlines()
-      found=False
       doneAdding=False
-      x=0
-      stop_count=0
       commander_=input("Which commander to edit? ")
       with open('decks.txt','w') as file_:
        while not doneAdding:
+        print("Writing deck (in addition mode). Please wait!")
         for card___ in lines:
          match_c=re.search(commander_, card___)
-         match_stop=re.search("Commander:", card___)
-         if x>=len(added):
-          print("Added all cards.")
-          doneAdding=True
          if match_c:
-          if found==True:
-            continue
-          else:
-           found=True
-           print(f'Found {card___}')
-         if found==True:
-          if not match_stop: 
-              print(f'Adding {added[x]} to {commander_}')
-              file_.write(f'\n1 {added[x]}')
-              x+=1
-              continue
-          elif stop_count==0:
-           print('Skipping commander for the first time.')
-           stop_count+=1
-          else:
-           doneAdding=True
+           file_.write(card___)
+           for addition in added:
+             file_.write(f'\n1, {addition}')
+             print(f'Added {addition} to {commander_}')
+         else:
+           file_.write(card___)
+        doneAdding=True
+             
      except Exception as e:
       print(f"An error occurred: [{e}] while adding.")
   #Removing Cards
@@ -77,7 +63,7 @@ def editDeck():
       found2=False
       stop_count2=0
       with open('decks.txt','w') as fw:
-       print("Writing deck. Please wait!")
+       print("Writing deck (in removal mode). Please wait!")
        for card___ in lines:
         match_c=re.search(commander_, card___)
         match_stop=re.search("Commander:", card___)
