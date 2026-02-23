@@ -33,38 +33,76 @@ def editDeck():
      print(f"An error occurred: {e}")
   #Adding cards
   try:
-    with open('decks.txt','r+') as file:
+    with open('decks.txt','r') as file:
+     try:
+      print("Reading file to add to.")
+      lines=file.readlines()
       found=False
+      doneAdding=False
       x=0
       stop_count=0
       commander_=input("Which commander to edit? ")
-      for card___ in file.read().split('\n'):
-        match_c=re.search(commander_, card___)
-        match_stop=re.search("Commander:", card___)
-        if x>=len(added):
-         print("Added all cards.")
-         break
-        if match_c:
+      with open('decks.txt','w') as file_:
+       while not doneAdding:
+        for card___ in lines:
+         match_c=re.search(commander_, card___)
+         match_stop=re.search("Commander:", card___)
+         if x>=len(added):
+          print("Added all cards.")
+          doneAdding=True
+         if match_c:
           if found==True:
             continue
           else:
            found=True
            print(f'Found {card___}')
-        if found==True:
+         if found==True:
           if not match_stop: 
               print(f'Adding {added[x]} to {commander_}')
-              file.write(f'\n1 {added[x]}')
+              file_.write(f'\n1 {added[x]}')
               x+=1
               continue
           elif stop_count==0:
            print('Skipping commander for the first time.')
            stop_count+=1
           else:
-           break
-      for card___ in file.read().split('\n'):
+           doneAdding=True
+     except Exception as e:
+      print(f"An error occurred: [{e}] while adding.")
+  #Removing Cards
+    try:
+     with open('decks.txt','r') as fr:
+      print("Reading deck.")
+      lines=fr.readlines()
+      found2=False
+      stop_count2=0
+      with open('decks.txt','w') as fw:
+       print("Writing deck. Please wait!")
+       for card___ in lines:
         match_c=re.search(commander_, card___)
         match_stop=re.search("Commander:", card___)
-        match_cut=re.search(removed[y],card__)
+        if match_c:
+          if found2==True:
+            continue
+          else:
+           found2=True
+           print(f'Found {card___} to edit.') 
+        if found2==True:
+         for cut in removed:
+          match_cut=re.search(cut,card___)
+          if not match_stop: 
+            if not match_cut:
+              fw.write(card___)
+            else:
+              print(f"Removing {cut} from {commander_}")
+          elif stop_count2==0:
+           print('Skipping commander for the first time.')
+           stop_count2+=1
+          else:
+           break
+    except Exception as e:
+      print(f"An error occurred: [{e}] while removing.")
+           
        
             
            
@@ -101,6 +139,7 @@ def getDeck():
         for name, qty in deck.items():
             if name!=cmdr:
              file.write(f"{qty} {name}\n")
+             deck.update({name : qty})
     except FileNotFoundError:
      print("File not found.")
     viewDeck()
