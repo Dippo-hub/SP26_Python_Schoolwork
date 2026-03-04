@@ -55,6 +55,7 @@ def editDeck():
              
      except Exception as e:
       print(f"An error occurred: [{e}] while adding.")
+      
   #Removing Cards
     try:
      with open('decks.txt','r') as fr:
@@ -62,8 +63,9 @@ def editDeck():
       lines=fr.readlines()
       found2=False
       stop_count2=0
-      with open('decks.txt','w') as fw:
+     with open('decks.txt','w') as fw:
        print("Writing deck (in removal mode). Please wait!")
+       removed_count=0
        for card___ in lines:
         match_c=re.search(commander_, card___)
         match_stop=re.search("Commander:", card___)
@@ -81,11 +83,14 @@ def editDeck():
               fw.write(card___)
             else:
               print(f"Removing {cut} from {commander_}")
+              removed_count+=1
           elif stop_count2==0:
-           print('Skipping commander for the first time.')
+           print('Found commander again!')
            stop_count2+=1
           else:
            break
+         if removed_count==0:
+          print(f'No cards removed from {commander_}.')
     except Exception as e:
       print(f"An error occurred: [{e}] while removing.")
            
@@ -128,7 +133,6 @@ def getDeck():
              deck.update({name : qty})
     except FileNotFoundError:
      print("File not found.")
-    viewDeck()
   else:
     print("Invalid input.")
 

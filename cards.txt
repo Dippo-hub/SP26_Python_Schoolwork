@@ -1,96 +1,89 @@
-1 Adarkar Wastes
-1 Agility Bobblehead
-1 Ancient Den
-1 Arcane Signet
-1 Armed and Armored
-1 Armix, Filigree Thrasher
-1 Attrition
-1 Baboon Spirit
-1 Battlefield Forge
-1 Bitter Triumph
-1 Blood Crypt
-1 Born to Drive
-1 Braids, Arisen Nightmare
-1 Caves of Koilos
-1 Clamorous Ironclad
+1 Arid Mesa
+1 Armageddon
+1 Ashling, the Extinguisher
+1 Bilbo's Ring
+1 Bloodstained Mire
+1 Bolas's Citadel
+1 Buster Sword
+1 City of Brass
+1 Colossus Hammer
 1 Command Tower
-1 Commander's Sphere
-1 Cynical Loner
-1 Deadly Dispute
+1 Conqueror's Flail
+1 Counterspell
+1 Cyclonic Rift
+1 Dauthi Voidwalker
 1 Decree of Pain
-1 Demonic Junker
-1 Dispatch
-1 Drossforge Bridge
-1 Entomb
-1 Feed the Serpent
-1 Filth
-1 Gastal Thrillroller
+1 Delney, Streetwise Lookout
+1 Demonic Tutor
+1 Dragonfire Blade
+1 Drannith Magistrate
+1 Esper Sentinel
+1 Excalibur, Sword of Eden
+1 Exotic Orchard
+1 Fallen Shinobi
+1 Fierce Guardianship
+1 Flawless Maneuver
+1 Flooded Strand
+1 Force of Will
+1 Genji Glove
 1 Godless Shrine
-1 Goldmire Bridge
-1 Greasefang, Okiba Boss
-1 Great Furnace
+1 Grand Abolisher
+1 Gregor, Shrewd Magistrate
 1 Hallowed Fountain
-1 Hoard Hauler
-1 Hotshot Mechanic
-1 Imotekh the Stormlord
-1 Imposter Mech
+1 Hammer of Nazahn
+1 Helm of the Host
+1 Impostor Syndrome
 1 In Garruk's Wake
-1 Interface Ace
-1 Island
-1 Jackdaw
+5 Island
+1 Kamiz, Obscura Oculus
 1 Key to the City
-1 King Macar, the Gold-Cursed
-1 Knight Paladin
-1 Marauding Dreadship
-1 Megatron, Tyrant
-1 Midnight Pathlighter
-1 Mikaeus, the Unhallowed
-1 Mistvault Bridge
-1 Mobilizer Mech
-1 Monoist Sentry
-1 Morbid Curiosity
-1 Mountain
-1 Murder
-1 Nautiloid Ship
-1 Null Profusion
-1 Okiba Reckoner Raid
-1 Oppression
-1 Optimus Prime, Hero
-1 Oriq Loremage
-1 Parhelion II
+1 Laboratory Maniac
+1 Lightning Greaves
+1 Mana Confluence
+1 Mana Drain
+1 Marsh Flats
+1 Medomai the Ageless
+1 Misty Rainforest
+1 Mithril Coat
+1 Mother of Runes
+1 Mystic Remora
+1 Oathkeeper, Takeno's Daisho
 1 Path to Exile
-1 Peacewalker Colossus
-1 Phyrexian Arena
-2 Plains
-1 Putrid Imp
-1 Razortide Bridge
-1 Reaver Titan
-1 Reckoner's Bargain
-1 RMS Titanic
+1 Phyrexian Metamorph
+5 Plains
+1 Polluted Delta
+1 Quietus Spike
+1 Raffine's Tower
+1 Reanimate
+1 Rhystic Study
 1 Rout
-1 Rustvale Bridge
-1 Sacred Foundry
-1 Salvation Engine
-1 Scrap Mastery
-1 Seat of the Synod
-1 Shaun, Father of Synths
-1 Shivan Reef
-1 Silverbluff Bridge
-1 Skysovereign, Consul Flagship
-1 Steam Vents
-1 Sulfurous Springs
-6 Swamp
+1 Sakashima of a Thousand Faces
+1 Scrubland
+1 Selfless Samurai
+1 Shadowspear
+1 Shizo, Death's Storehouse
+1 Sigarda's Aid
+1 Silent-Blade Oni
+1 Smothering Tithe
+1 Steelshaper's Gift
+1 Strionic Resonator
+5 Swamp
+1 Swiftfoot Boots
+1 Sword of Wealth and Power
 1 Swords to Plowshares
-1 Talisman of Hierarchy
-1 Tempered Steel
-1 The Eternal Wanderer
-1 The Indomitable
-1 Thunderhawk Gunship
-1 Underground River
-1 Unmarked Grave
-1 Valor's Flagship
-1 Vault of Whispers
-1 Vela the Night-Clad
+1 Teferi's Protection
+1 Thassa's Oracle
+1 The One Ring
+1 Trailblazer's Boots
+1 Tundra
+1 Tymna the Weaver
+1 Underground Sea
+1 Vampiric Tutor
+1 Verdant Catacombs
+1 Vorpal Sword
 1 Watery Grave
+1 Whispersilk Cloak
+1 Windswept Heath
+1 Wrath of God
 
-1 Breya, Etherium Shaper
+1 Jin Sakai, Ghost of Tsushima
