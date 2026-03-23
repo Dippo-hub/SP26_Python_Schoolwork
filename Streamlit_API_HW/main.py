@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 import requests
-
+#Name= Nathan Silvey, ID= 0995
 #Chosen API: Gecko Cryptocurrency API: https://api.coingecko.com/api/
 link='https://api.coingecko.com/api/v3'
 @st.cache_data
