@@ -17,7 +17,7 @@ fi
 echo ""
 
 # Option A: Flask built-in dev server (simplest for learning)
-python app.py
+python /workspaces/SP26_Python_Schoolwork/web_st_ai_chat_class/src/web/app.py
 
 # Option B: Uvicorn via ASGI wrapper (uncomment to use)
 # pip install uvicorn asgiref

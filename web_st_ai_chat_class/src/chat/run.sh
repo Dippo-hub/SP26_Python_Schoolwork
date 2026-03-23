@@ -28,7 +28,7 @@ echo "  The Flask store should embed this in its iframe."
 echo ""
 
 # Start Streamlit (disable CORS so iframe embedding works)
-streamlit run L23_Streamlit_API.py \
+streamlit run /workspaces/SP26_Python_Schoolwork/web_st_ai_chat_class/src/chat/L23_Streamlit_API.py \
     --server.port 8501 \
     --server.address 0.0.0.0 \
     --server.enableCORS false \
