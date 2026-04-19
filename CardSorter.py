@@ -7,6 +7,11 @@ decklist=[]
 
 import re
 import fileinput
+import requests
+import pandas as pd
+import streamlit as st
+st.title("Deck Sorter")
+
 ##Need to update to work with file
 def editDeck():
   decklist=input("Enter decklist file: ")
