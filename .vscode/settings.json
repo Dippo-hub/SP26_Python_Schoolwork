@@ -2,7 +2,7 @@
     "python-envs.defaultEnvManager": "ms-python.python:venv",
     "python-envs.pythonProjects": [
         {
-            "path": "Streamlit_API_HW",
+            "path": "SP26/Streamlit_API_HW",
             "envManager": "ms-python.python:system",
             "packageManager": "ms-python.python:pip"
         },

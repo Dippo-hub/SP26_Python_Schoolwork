@@ -1,5 +1,5 @@
 import pytest 
-from tool import compounded_interest_calculator
+from SP26.L28.tool import compounded_interest_calculator
 
 def test_happy_path():
     result = compounded_interest_calculator(1000, 0.05, 10, 4)

@@ -1,0 +1,5 @@
+C++ is C + OOP and other stuff
+file extension is .cpp
+include libraries like C - must remember, use #include iostream
+exception handling
+cin and cout

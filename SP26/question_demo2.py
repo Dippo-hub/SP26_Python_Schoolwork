@@ -3,7 +3,7 @@
 #
 
 #from questions import ChoiceQuestion
-from questions import *
+from SP26.questions import *
 
 def main() :
    first = ChoiceQuestion()

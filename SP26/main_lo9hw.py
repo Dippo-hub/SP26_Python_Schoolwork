@@ -1,4 +1,4 @@
-from menu_lo9hw import Menu
+from SP26.menu_lo9hw import Menu
 import os, subprocess
 
 def run_bash_cmd(choice):
