@@ -14,7 +14,7 @@ int greet_name(std::string name) {
 }
 
 int main () {
-    //std:: cout << "Object Oriented Programming" << endl;
+    std:: cout << "Object Oriented Programming" << endl;
     std::string name = get_name();
     greet_name(name);
     return 0;
