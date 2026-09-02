@@ -9,8 +9,8 @@ void process_string() {
     std::cout << "Enter a string: ";
     getline(std::cin, message);
 
-    for (i=0; i<message.length(); i++) { //Because offset by 1
-        if (i%2==0) {
+    for (i=0; i<message.length(); i++) { 
+        if (i%2==1) {
             result += message.at(i);
         }
     }
