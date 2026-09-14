@@ -3,24 +3,30 @@
 #include <ctime>
 
 bool search_points(const short pointsArr[], int target, int size = 12) {
+    std::cout << "Checking points array for " << target << std::endl;
     for(int i=0;i<size;i++) {
-        if (pointsArr[i] == target)
+        if (pointsArr[i] == target) {
             return true;
-        else 
-            return false;
+        }
     }
     return false;
 }
 
+void print_array(const short arr[], short size = 12) {
+    for(short i = 0; i<size; i++) {
+        std::cout << arr[i] << " ";
+    }
+}
 void play_craps() {
-    srand(time(0));
 
     int score, d1, d2, round=0;
-    short points[12];
+    short points[12] = {0};
     bool playing = true;
 
     while (playing) {
         round++;
+        print_array(points);
+        std::cout << std::endl;
         d1 = random() % 6 + 1;
         d2 = random() % 6 + 1;
 
@@ -37,7 +43,7 @@ void play_craps() {
                 points[round-1] = score;
             }
         } else {
-
+            //Rounds beyond 1
             if (score == 7) {
                 std::cout << "You lose!" << std::endl;
                 playing = false;
@@ -53,7 +59,9 @@ void play_craps() {
 
 int main (void) {
     short t;
+    srand(time(0));
     while(t++<20) {
+        std::cout << "Game " << t << std::endl;
         play_craps();
     }
 }
