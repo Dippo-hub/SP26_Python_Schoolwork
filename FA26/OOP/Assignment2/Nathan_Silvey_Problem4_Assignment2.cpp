@@ -25,13 +25,15 @@ void play_craps() {
 
     while (playing) {
         round++;
-        print_array(points);
-        std::cout << std::endl;
+
         d1 = random() % 6 + 1;
         d2 = random() % 6 + 1;
 
         score = d1 + d2;
         std::cout << "Round " << round << std::endl << "Rolled: " << score << std::endl;
+        std::cout << "Points: ";
+        print_array(points);
+        std::cout << std::endl;
         if (round == 1) {
             if (score == 2 || score == 3 || score == 12) {
                 std::cout << "You Lose" << std::endl;
@@ -58,9 +60,9 @@ void play_craps() {
 }
 
 int main (void) {
-    short t;
+    short t=0;
     srand(time(0));
-    while(t++<20) {
+    while(t++<5) {
         std::cout << "Game " << t << std::endl;
         play_craps();
     }

@@ -8,6 +8,7 @@ int id = 0;
 class Student {
     public:
         std::string firstname, lastname;
+    private:
         int studentID, credits;
         double GPA;
 
@@ -81,7 +82,7 @@ int main(void) {
     newCircle2.display();
     */
     Student s1;
-    Student s2("James", "Barclay", 57, 12, 4.0);
+    Student s2("James", "May", 57, 12, 4.0);
     Student s3("Jeremy", "Clarkson");
 
     s1.display();
