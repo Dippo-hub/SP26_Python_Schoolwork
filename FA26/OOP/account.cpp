@@ -45,5 +45,5 @@ int main(void) {
     Account bank(1122, 20000, 4.5);
     bank.withdraw(2500);
     bank.deposit(3000);
-    std::cout << "Balance for account 1122: " << bank.getBalance() << " with annual interest rate: " << bank.getInterest() << std::endl;
+    std::cout << "Balance for account 1122: $" << bank.getBalance() << " with annual interest rate: " << bank.getInterest() << std::endl;
 }
