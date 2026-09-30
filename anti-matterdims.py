@@ -18,15 +18,3 @@ dims = [Dim(i, 0) for i in range(8)]
 timeout = 2 # Seconds
 start_time = time.time()
 
-while time.time() - start_time < timeout and matter >= 0:
-    time.sleep(0.1)  # Simulate time passing
-    for dim in reversed(dims):
-        if matter >= dim.cost:
-            matter -= dim.cost
-            dim.purchases += 1
-            dim.exponent += 1
-            dim.cost = (10 ** dim.depth) * (10 ** (dim.purchases // 10))
-            dim.value = dim.base * (10 ** dim.exponent)
-            print(f"Purchased {dim}. Remaining matter: {matter}", end="\r")
-        else:
-            print(f"Not enough matter to purchase {dim}. Required: {dim.cost}, Available: {matter}", end="\r")

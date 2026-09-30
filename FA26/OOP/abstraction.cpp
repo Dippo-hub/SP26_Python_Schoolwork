@@ -23,7 +23,7 @@ class Rectangle {
         }
 
         void getDims() {
-            std::cout << "Width: " << width << "Height: " << height << std::endl;
+            std::cout << "Width: " << width << " Height: " << height << std::endl;
         }
 
         double getArea() {
