@@ -83,7 +83,7 @@ class LargeNumber:
             other = LargeNumber(float(other), 0)
         return self.mantissa <= other.mantissa and self.exponent <= other.exponent
 
-    def floor_div(self, other):
+    def __floordiv__(self, other):
         """Performs floor division between two LargeNumbers."""
         if not isinstance(other, LargeNumber):
             other = LargeNumber(float(other), 0)
@@ -103,9 +103,21 @@ class LargeNumber:
 
         quotient = quotient_mantissa * (10 ** exponent_diff)
         return LargeNumber(math.floor(quotient), 0)
+    
+    def __truediv__(self, other):
+        """Performs true division between two LargeNumbers."""
+        if not isinstance(other, LargeNumber):
+            other = LargeNumber(float(other), 0)
 
-    def __floordiv__(self, other):
-        return self.floor_div(other)
+        if other.mantissa == 0:
+            raise ZeroDivisionError("division by zero")
+        if self.mantissa == 0:
+            return LargeNumber(0.0, 0)
+
+        exponent_diff = self.exponent - other.exponent
+        quotient_mantissa = self.mantissa / other.mantissa
+
+        return LargeNumber(quotient_mantissa, exponent_diff)
 
     def __str__(self):
         """Formats the output into scientific notation."""
@@ -114,8 +126,9 @@ class LargeNumber:
 class Dimension:
     def __init__(self, value: LargeNumber, depth: int):
         self.value = value
-        self.depth = depth  # Depth starts from 0 but dimensions start at 1
+        self.depth = depth  
         self.purchases = 0
+        self.multiplier = LargeNumber(1.0, 0)  # Initial multiplier for production
         self.cost = self.calculate_cost()
 
     def calculate_cost(self):
@@ -124,7 +137,7 @@ class Dimension:
         base_cost = LargeNumber(1.0, 0)  # Base cost of 1
         depth_multiplier = LargeNumber(10.0, 0)  # Cost x10 with each depth level
         purchase_multiplier = LargeNumber(100, 0)  # Cost increases by x100 with each purchase
-        return base_cost * (depth_multiplier ** self.depth) * (purchase_multiplier ** self.purchases // 10)
+        return (base_cost * (depth_multiplier ** self.depth) * (purchase_multiplier ** (self.purchases // 10) + 1))/2
 
     def purchase(self):
         """Simulates purchasing the dimension, increasing its cost."""
@@ -143,17 +156,23 @@ class Dimension:
             lower_dimension = dimensions[self.depth - 1]
             lower_dimension.value += self.value
 
-matter = LargeNumber(1.0, 0)  # Starting with 1 Matter
-dimensions = [Dimension(LargeNumber(0.0, 0), i) for i in range(8)]  # Create 8 dimensions
+class MatterDims:
+    def __init__(self):
+        self.matter = LargeNumber(1.0, 0)  # Starting with 1 Matter
+        self.dimensions = [Dimension(LargeNumber(0.0, 0), i) for i in range(8)]  # Create 8 dimensions
+
+    def simulate(self, cycles: int):
+        """Simulates the production and purchasing of dimensions over a number of cycles."""
+        for _ in range(cycles):
+            print(f"Matter: {self.matter}, D1: {self.dimensions[0].value}, D2: {self.dimensions[1].value}, D3: {self.dimensions[2].value}, D4: {self.dimensions[3].value}, D5: {self.dimensions[4].value}, D6: {self.dimensions[5].value}, D7: {self.dimensions[6].value}, D8: {self.dimensions[7].value}", end="\r")
+            for dim in reversed(self.dimensions):
+                if self.matter >= dim.cost:
+                    self.matter -= dim.cost
+                    dim.purchase()
+                dim.produce()
+            time.sleep(1)  # Wait for 1 second before the next cycle
 
 
 if __name__ == "__main__":
-    # Example simulation loop
-    for _ in range(10):  # Simulate 10 production cycles
-        for dim in reversed(dimensions):
-            if matter >= dim.cost:
-                matter -= dim.cost
-                dim.purchase()
-            dim.produce()
-        print(f"Matter: {matter}, D1: {dimensions[0].value}, D2: {dimensions[1].value}, D3: {dimensions[2].value}")
-        time.sleep(1)  # Wait for 1 second before the next cycle
+    matter_dims = MatterDims()
+    matter_dims.simulate(100)  # Simulate for 100 cycles
