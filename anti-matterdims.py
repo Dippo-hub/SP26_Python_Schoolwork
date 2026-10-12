@@ -40,6 +40,10 @@ class Dimension:
         self.cost = self.calculate_cost()
         self.value += LargeNumber(1.0, 0)  # Increase the dimension's value by 1 for each purchase
 
+        for dim in matter_dims.dimensions:
+            if dim.depth > self.depth:
+                dim.multiplier *= LargeNumber(1.5, 0) * matter_dims.galaxies if matter_dims.galaxies > 0 else LargeNumber(1.0, 0)  # Increase multiplier for higher dimensions
+
 
     def produce(self):
         """Each dimension produces the one below it, scaled by its value. D1 produces Matter"""
@@ -99,6 +103,17 @@ class MatterDims:
         elif self.dimboosts >= 4 and self.dimensions[7].value >= LargeNumber(21*(self.dimboosts-3), 1):
             return True
         return False
+
+    def Galaxy(self):
+        """Resets all dimensions, dimboosts, and matter but grants a stacking 1.5x multiplier to all dimensions for each purchase of the first dimension."""
+        self.matter = LargeNumber(1.0, 0)  # Reset matter to 1
+        self.galaxies += 1  # Increment the number of galaxies
+        self.dimboosts = 0  # Reset dimension boosts
+        for dim in self.dimensions:
+            dim.value = LargeNumber(0.0, 0)  # Reset dimension value
+            dim.purchases = 0  # Reset purchases
+            dim.cost = dim.calculate_cost()  # Recalculate cost after reset
+        print("Galaxied!")
 
 
 if __name__ == "__main__":
