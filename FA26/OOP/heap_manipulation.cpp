@@ -29,6 +29,7 @@ class Student {
             age = 18;
             GPA = 4;
         }
+        
 };
 
 class Circle {
@@ -52,6 +53,17 @@ class Circle {
                 this->radius = 1;
         }
 
+        //every class has a destructor too, which triggers when deallocating object from stack
+        ~Circle() {
+            circleCount--;
+        }
+
+        //copy constructors initialize copies of same objects. If you have a pointer data field, you must create a new pointer to avoid both pointing at the same thing, keeping objects separate.
+        Circle(const Circle& circle) {
+            radius = circle.getRadius() + 3;
+            //copies a circle object but its radius is 3 larger
+        }
+
         double getRadius() const {
             return radius;
         }
@@ -60,6 +72,8 @@ class Circle {
             return circleCount;
         }
 };
+
+
 
 int main(void) {
     Student s1;
@@ -82,4 +96,6 @@ int main(void) {
     for(int k=0; k<5; k++)
         cout << result[k] << " ";
     cout << endl;
+
+    
 }
