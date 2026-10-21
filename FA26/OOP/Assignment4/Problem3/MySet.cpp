@@ -1,38 +1,27 @@
 #include "MySet.h"
 
-        MySet::MySet(unsigned int maxValue) {
-            range = maxValue;
-            elements = new bool[range+1]{};
-            count = 0;
-        }
-        MySet::MySet(const MySet& other) {
-            range = other.getRange();
-            count = other.getSize();
-            bool* newElements = new bool[range+1]{};
+        MySet::MySet(unsigned int maxValue)
+            : range(maxValue), count(0), elements(new bool[maxValue + 1]{}) {}
 
-            for(short i=0; i<+range; i++) {
-                if(other.contains(i))
-                    newElements[i]=true;
-            }
-
-            delete [] elements;
-            elements = newElements;
+        MySet::MySet(const MySet& other)
+            : range(other.range), count(other.count),
+              elements(new bool[other.range + 1]{}) {
+            for (unsigned int i = 0; i <= range; ++i)
+                elements[i] = other.elements[i];
         }
 
         MySet& MySet::operator=(const MySet& other) {
             if (this==&other)
                 return *this;
-            range = other.getRange();
-            count = other.getSize();
-            bool* newElements = new bool[range+1]{};
 
-            for(short i=0; i<+range; i++) {
-                if(other.contains(i))
-                    newElements[i]=true;
-            }
+            bool* newElements = new bool[other.range + 1]{};
+            for (unsigned int i = 0; i <= other.range; ++i)
+                newElements[i] = other.elements[i];
 
-            delete [] elements;
+            delete[] elements;
             elements = newElements;
+            range = other.range;
+            count = other.count;
             return *this;
         }
         
@@ -40,7 +29,7 @@
             delete [] elements;
         }
         void MySet::insertElement(int k) {
-            if(k<0||k>range) {
+            if(k < 0 || static_cast<unsigned int>(k) > range) {
                 std::cout << std::endl << "Out of range: " << k << std::endl;
                 return;}
             if (!(elements[k]))
@@ -49,7 +38,7 @@
 
         }
         void MySet::deleteElement(int k) {
-            if(k<0||k>range) {
+            if(k < 0 || static_cast<unsigned int>(k) > range) {
                 std::cout << std::endl << "Out of range: " << k << std::endl;
                 return;}
             if(elements[k])
@@ -57,7 +46,7 @@
             elements[k]=false;
         }
         bool MySet::contains(int k) const {
-            if(k<0||k>range) {
+            if(k < 0 || static_cast<unsigned int>(k) > range) {
                 std::cout << std::endl << "Out of range: " << k << std::endl;
                 return false;}
             return elements[k];
@@ -70,25 +59,19 @@
         }
         void MySet::printSet() const {
             std::cout << std::endl << "{ ";
-            for(short j=0; j<=range; j++) {
+            for(unsigned int j=0; j<=range; j++) {
                 if (elements[j])
                 std::cout << j << " ";
             }
+            std::cout << " }" << std::endl;
         }
-        //i'm unsure what the question is asking here, my interpretation is an element
-        //by element comparison along the range of the smaller set and if they all match
-        //then return true regardless of the fact that the ranges are different
         bool MySet::isEqualTo(const MySet& other) const {
-            unsigned int smallest;
-            if(range>other.getRange())
-                smallest = range;
-            else
-                smallest = other.getRange();
-            unsigned int matches = 0;
-            for(int h=0; h<=smallest; h++) {
-                if (this->contains(h) && other.contains(h))
-                    matches++;
+            const unsigned int largestRange = range > other.range ? range : other.range;
+            for (unsigned int i = 0; i <= largestRange; ++i) {
+                const bool inThis = i <= range && elements[i];
+                const bool inOther = i <= other.range && other.elements[i];
+                if (inThis != inOther)
+                    return false;
             }
-
-            return matches==smallest;
+            return true;
         }
