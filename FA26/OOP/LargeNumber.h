@@ -1,6 +1,9 @@
 #ifndef LARGENUMBER_H
 #define LARGENUMBER_H
+#include <algorithm>
 #include <cmath>
+#include <iostream>
+using namespace std;
 class LargeNumber {
     private:
         double mantissa;
@@ -26,11 +29,15 @@ class LargeNumber {
             exponent = e;
         }
         void normalize() {
-            while(mantissa>10) {
+            if (mantissa == 0) {
+                exponent = 0;
+                return;
+            }
+            while(std::abs(mantissa) >= 10) {
                 exponent++;
                 mantissa /= 10;
             }
-            while(mantissa<1 && mantissa>0) {
+            while(std::abs(mantissa) < 1) {
                 exponent--;
                 mantissa *= 10;
             }
@@ -38,67 +45,32 @@ class LargeNumber {
 
         //add
         LargeNumber addition(const LargeNumber &other) const {
-            int exp_diff = exponent - other.getExponent();
-            int workingE;
-            if(other.getExponent() > exponent) {
-                workingE = other.getExponent();
-            } else {
-                workingE = exponent;
-            }
-            double workingM = mantissa * (10 ^ exp_diff);
-            double newM = workingM + other.getMantissa();
+            int workingE = std::max(exponent, other.getExponent());
+            double newM =
+                mantissa * std::pow(10.0, exponent - workingE) +
+                other.getMantissa() * std::pow(10.0, other.getExponent() - workingE);
             LargeNumber result(newM, workingE);
             result.normalize();
             return result;
         }
         //or
         LargeNumber operator +(const LargeNumber &other) const {
-            int exp_diff = this->exponent - other.getExponent();
-            int workingE;
-            if(other.getExponent() > exponent) {
-                workingE = other.getExponent();
-            } else {
-                workingE = exponent;
-            }
-            double workingM = mantissa * (10 ^ exp_diff);
-            double newM = workingM + other.getMantissa();
-            while(newM>10) {
-                workingE++;
-                newM /= 10;
-            }
-            LargeNumber result(newM, workingE);
-            return result;
+            return addition(other);
         }
 
         //subtract
         LargeNumber subtraction(const LargeNumber &other) const {
-            int exp_diff = this->exponent - other.getExponent();
-            int workingE;
-            if(other.getExponent() > exponent) {
-                workingE = other.getExponent();
-            } else {
-                workingE = exponent;
-            }
-            double workingM = mantissa * (10 ^ exp_diff);
-            double newM = workingM - other.getMantissa();
+            int workingE = std::max(exponent, other.getExponent());
+            double newM =
+                mantissa * std::pow(10.0, exponent - workingE) -
+                other.getMantissa() * std::pow(10.0, other.getExponent() - workingE);
             LargeNumber result(newM, workingE);
             result.normalize();
             return result;
         }
         //or
         LargeNumber operator -(const LargeNumber &other) const {
-            int exp_diff = this->exponent - other.getExponent();
-            int workingE;
-            if(other.getExponent() > exponent) {
-                workingE = other.getExponent();
-            } else {
-                workingE = exponent;
-            }
-            double workingM = mantissa * (10 ^ exp_diff);
-            double newM = workingM - other.getMantissa();
-            LargeNumber result(newM, workingE);
-            result.normalize();
-            return result;
+            return subtraction(other);
         }
         //multiply
         LargeNumber multiply(const LargeNumber &other) const {
@@ -133,14 +105,54 @@ class LargeNumber {
             return result;
         }
         //comparison 
-        bool equals(const LargeNumber &other) const;
-        bool lessThan(const LargeNumber &other) const;
-        //etc
+        bool equals(const LargeNumber &other) const {
+            return (mantissa == other.getMantissa() && exponent == other.getExponent());
+        }
+
+        bool operator ==(const LargeNumber &other) const {
+            return (mantissa == other.getMantissa() && exponent == other.getExponent());
+        }
+
+        bool operator <(const LargeNumber &other) const {
+            if (other.getExponent() > exponent) 
+                return true;
+            else if (exponent > other.getExponent())
+                return false;
+            else
+                return mantissa < other.getMantissa();
+        }
+        bool lessThan(const LargeNumber &other) const {
+            if (other.getExponent() > exponent) 
+                return true;
+            else if (exponent > other.getExponent())
+                return false;
+            else
+                return mantissa < other.getMantissa();
+        }
+
+        bool greaterThan(const LargeNumber &other) const {
+            if (other.getExponent() > exponent) 
+                return false;
+            else if (exponent > other.getExponent())
+                return true;
+            else
+                return mantissa > other.getMantissa();
+        }
+
+        bool operator >(const LargeNumber &other) const {
+            return greaterThan(other);
+        }
+
+        bool operator <=(const LargeNumber &other) const {
+            return equals(other) || lessThan(other);
+        }
+        
+        bool operator >=(const LargeNumber &other) const {
+            return equals(other) || greaterThan(other);
+        }
 
         void disp() {
             std::cout << mantissa << 'e' << exponent << std::endl;
         }
 };
-
 #endif
-
