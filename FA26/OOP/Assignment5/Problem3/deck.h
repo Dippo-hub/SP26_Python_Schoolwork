@@ -2,9 +2,9 @@
 #define DECK_H
 
 #include "card.h"
-#include "card.cpp"
 #include <random>
 #include <utility>
+#include <stdexcept>
 
 class Deck {
     private:

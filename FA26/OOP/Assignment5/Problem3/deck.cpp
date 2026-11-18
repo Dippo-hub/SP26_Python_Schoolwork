@@ -10,8 +10,10 @@ Deck::Deck() {
 }
 
 Card Deck::deal() {
-    if (moreCards())
-        return deck[topCard++];
+    if (!moreCards())
+        throw std::out_of_range("No cards left to deal");
+
+    return deck[topCard++];
 }
 
 bool Deck::moreCards() const { return topCard<52; }
